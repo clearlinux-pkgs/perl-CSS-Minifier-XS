@@ -4,7 +4,7 @@
 #
 Name     : perl-CSS-Minifier-XS
 Version  : 0.09
-Release  : 6
+Release  : 7
 URL      : https://cpan.metacpan.org/authors/id/G/GT/GTERMARS/CSS-Minifier-XS-0.09.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/G/GT/GTERMARS/CSS-Minifier-XS-0.09.tar.gz
 Summary  : 'XS based CSS minifier'
