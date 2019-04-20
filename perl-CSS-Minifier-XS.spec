@@ -4,10 +4,10 @@
 #
 Name     : perl-CSS-Minifier-XS
 Version  : 0.09
-Release  : 9
+Release  : 10
 URL      : https://cpan.metacpan.org/authors/id/G/GT/GTERMARS/CSS-Minifier-XS-0.09.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/G/GT/GTERMARS/CSS-Minifier-XS-0.09.tar.gz
-Summary  : 'XS based CSS minifier'
+Summary  : XS based CSS minifier
 Group    : Development/Tools
 License  : Artistic-1.0-Perl
 Requires: perl-CSS-Minifier-XS-lib = %{version}-%{release}
@@ -23,6 +23,7 @@ Summary: dev components for the perl-CSS-Minifier-XS package.
 Group: Development
 Requires: perl-CSS-Minifier-XS-lib = %{version}-%{release}
 Provides: perl-CSS-Minifier-XS-devel = %{version}-%{release}
+Requires: perl-CSS-Minifier-XS = %{version}-%{release}
 
 %description dev
 dev components for the perl-CSS-Minifier-XS package.
