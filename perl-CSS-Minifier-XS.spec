@@ -4,13 +4,13 @@
 #
 Name     : perl-CSS-Minifier-XS
 Version  : 0.09
-Release  : 12
+Release  : 13
 URL      : https://cpan.metacpan.org/authors/id/G/GT/GTERMARS/CSS-Minifier-XS-0.09.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/G/GT/GTERMARS/CSS-Minifier-XS-0.09.tar.gz
-Summary  : XS based CSS minifier
+Summary  : 'XS based CSS minifier'
 Group    : Development/Tools
 License  : Artistic-1.0-Perl
-Requires: perl-CSS-Minifier-XS-lib = %{version}-%{release}
+Requires: perl-CSS-Minifier-XS-perl = %{version}-%{release}
 BuildRequires : buildreq-cpan
 
 %description
@@ -21,7 +21,6 @@ terms as Perl itself.
 %package dev
 Summary: dev components for the perl-CSS-Minifier-XS package.
 Group: Development
-Requires: perl-CSS-Minifier-XS-lib = %{version}-%{release}
 Provides: perl-CSS-Minifier-XS-devel = %{version}-%{release}
 Requires: perl-CSS-Minifier-XS = %{version}-%{release}
 
@@ -29,22 +28,24 @@ Requires: perl-CSS-Minifier-XS = %{version}-%{release}
 dev components for the perl-CSS-Minifier-XS package.
 
 
-%package lib
-Summary: lib components for the perl-CSS-Minifier-XS package.
-Group: Libraries
+%package perl
+Summary: perl components for the perl-CSS-Minifier-XS package.
+Group: Default
+Requires: perl-CSS-Minifier-XS = %{version}-%{release}
 
-%description lib
-lib components for the perl-CSS-Minifier-XS package.
+%description perl
+perl components for the perl-CSS-Minifier-XS package.
 
 
 %prep
 %setup -q -n CSS-Minifier-XS-0.09
+cd %{_builddir}/CSS-Minifier-XS-0.09
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
-export LANG=C
+export LANG=C.UTF-8
 if test -f Makefile.PL; then
 %{__perl} Makefile.PL
 make  %{?_smp_mflags}
@@ -54,7 +55,7 @@ else
 fi
 
 %check
-export LANG=C
+export LANG=C.UTF-8
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
@@ -74,12 +75,12 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files
 %defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.28.2/x86_64-linux-thread-multi/CSS/Minifier/XS.pm
 
 %files dev
 %defattr(-,root,root,-)
 /usr/share/man/man3/CSS::Minifier::XS.3
 
-%files lib
+%files perl
 %defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.28.2/x86_64-linux-thread-multi/auto/CSS/Minifier/XS/XS.so
+/usr/lib/perl5/vendor_perl/5.30.1/x86_64-linux-thread-multi/CSS/Minifier/XS.pm
+/usr/lib/perl5/vendor_perl/5.30.1/x86_64-linux-thread-multi/auto/CSS/Minifier/XS/XS.so
