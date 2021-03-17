@@ -4,7 +4,7 @@
 #
 Name     : perl-CSS-Minifier-XS
 Version  : 0.13
-Release  : 19
+Release  : 20
 URL      : https://cpan.metacpan.org/authors/id/G/GT/GTERMARS/CSS-Minifier-XS-0.13.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/G/GT/GTERMARS/CSS-Minifier-XS-0.13.tar.gz
 Summary  : 'XS based CSS minifier'
@@ -101,5 +101,5 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files perl
 %defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.30.3/x86_64-linux-thread-multi/CSS/Minifier/XS.pm
-/usr/lib/perl5/vendor_perl/5.30.3/x86_64-linux-thread-multi/auto/CSS/Minifier/XS/XS.so
+/usr/lib/perl5/vendor_perl/5.32.1/x86_64-linux-thread-multi/CSS/Minifier/XS.pm
+/usr/lib/perl5/vendor_perl/5.32.1/x86_64-linux-thread-multi/auto/CSS/Minifier/XS/XS.so
